@@ -10,6 +10,8 @@ namespace Lab02
     {
         static void Main(string[] args)
         {
+            string valor1 = "Este es el valor 1";
+            int valor2 = 5;
         }
     }
 }

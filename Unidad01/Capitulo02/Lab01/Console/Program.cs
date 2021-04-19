@@ -6,6 +6,7 @@ namespace Console
     {
         static void Main(string[] args)
         {
+            System.Console.WriteALine("Esta linea va a dar error!");
         }
     }
 }

@@ -10,6 +10,16 @@ namespace LabSintaxis2
     {
         static void Main(string[] args)
         {
+            string inputTexto;
+            inputTexto = Console.ReadLine();
+            if (inputTexto != "")
+            {
+                Console.WriteLine("Texto ingresado");
+            }
+            else
+            {
+                Console.WriteLine("Error, no se ingreso ningun texto");
+            }
         }
     }
 }

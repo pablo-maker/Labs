@@ -30,16 +30,19 @@ namespace LabSintaxis2
 
             ConsoleKeyInfo opcion = Console.ReadKey();
             Console.Write("\r\n");
-            switch (opcion.Key.ToString())
+            switch (opcion.Key)
             {
-                case "D1":
+                case ConsoleKey.D1:
                     Console.WriteLine(inputTexto.ToUpper());
                     break;
-                case "D2":
+                case ConsoleKey.D2:
                     Console.WriteLine(inputTexto.ToLower());
                     break;
-                case "D3":
+                case ConsoleKey.D3:
                     Console.WriteLine(inputTexto.Length);
+                    break;
+                default:
+                    Console.WriteLine("Error, seleccione una opcion de las anteriores");
                     break;
             }
         }

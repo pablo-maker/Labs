@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Clases
 {
-    class B : A
+    public class B : A
     {
         public B() : base("Instancia de B")
         {

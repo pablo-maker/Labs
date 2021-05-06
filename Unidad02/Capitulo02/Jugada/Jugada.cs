@@ -8,15 +8,9 @@ namespace Jugada
 {
     public class Jugada
     {
-        private int _adivino;
         private int _intentos;
         private int _numero;
 
-        public int Adivino
-        {
-            get => _adivino;
-            set => _adivino = value;
-        }
         public int Intentos
         {
             get => _intentos;
@@ -31,7 +25,6 @@ namespace Jugada
         {
             Random rnd = new Random();
             Numero = rnd.Next(0,maxNumero);
-            Console.WriteLine(Numero);
         }
         public bool Comparar(int num)
         {

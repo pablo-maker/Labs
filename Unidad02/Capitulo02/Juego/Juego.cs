@@ -57,7 +57,14 @@ namespace Juego
 
                         break;
                     case ConsoleKey.D2:
-                        Console.WriteLine("El record es: " + Record); 
+                        if (Record > 0)
+                        {
+                            Console.WriteLine("El record es: " + Record);
+                        } else
+                        {
+                            Console.WriteLine("Sin records");
+                        }
+                            
                         break;
                     case ConsoleKey.D3:
                         salir = true;
@@ -85,11 +92,7 @@ namespace Juego
                 Record = intentos;
             }
         }
-        private void Continuar()
-        {
-            
-
-        }
+       
         private int PreguntarMaximo()
         {
             Console.WriteLine("Ingrese el numero maximo:");

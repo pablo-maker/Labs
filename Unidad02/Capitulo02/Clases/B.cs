@@ -12,9 +12,10 @@ namespace Clases
         {
 
         }
-        public string M4()
+        public void M4()
         {
-            return "Metodo del hijo invocado";
+            Console.WriteLine("Metodo del hijo invocado");
+            //return "Metodo del hijo invocado";
         }
     }
 }

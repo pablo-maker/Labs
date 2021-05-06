@@ -32,23 +32,22 @@ namespace Clases
             NombreInstancia = nombre;
         }
 
-        public string MostrarNombre()
+        public void MostrarNombre()
         {
-            return NombreInstancia;
+            Console.WriteLine(NombreInstancia);
         }
-        public string M1()
+        public void M1()
         {
-            return "Metodo M1 invocado";
+            Console.WriteLine("Metodo M1 invocado");
         }
-        public string M2()
+        public void M2()
         {
-            return "Metodo M2 invocado";
+            Console.WriteLine("Metodo M2 invocado");
         }
-        public string M3()
+        public void M3()
         {
-            return "Metodo M3 invocado";
+            Console.WriteLine("Metodo M3 invocado");
         }
-
 
     }
 }

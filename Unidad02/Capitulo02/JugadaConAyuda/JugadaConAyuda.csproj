@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4600D4BB-4E1E-4798-B7E9-98E708A3826A}</ProjectGuid>
+    <ProjectGuid>{28318832-02E3-4323-B8C8-3D4A6D67199B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Juego</RootNamespace>
-    <AssemblyName>Juego</AssemblyName>
+    <RootNamespace>JugadaConAyuda</RootNamespace>
+    <AssemblyName>JugadaConAyuda</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,14 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Juego.cs" />
+    <Compile Include="JugadaConAyuda.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\JugadaConAyuda\JugadaConAyuda.csproj">
-      <Project>{28318832-02e3-4323-b8c8-3d4a6d67199b}</Project>
-      <Name>JugadaConAyuda</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Jugada\Jugada.csproj">
       <Project>{b93eb3b5-2f34-4113-b414-af740a78f2eb}</Project>
       <Name>Jugada</Name>

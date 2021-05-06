@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using Jugada;
+using JugadaConAyuda;
 
 namespace Juego
 {
@@ -32,7 +32,7 @@ namespace Juego
                 {
                     case ConsoleKey.D1:
 
-                        Jugada.Jugada partida = new Jugada.Jugada(PreguntarMaximo());
+                        JugadaConAyuda.JugadaConAyuda partida = new JugadaConAyuda.JugadaConAyuda(PreguntarMaximo());
                         bool resultado = false;
                         string reintentar = "s";
                         while (resultado == false && reintentar != "n")

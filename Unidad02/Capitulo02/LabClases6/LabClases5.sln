@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabClases5", "LabClases5.csproj", "{2729BECF-E9BC-457D-BF8B-85A4747E8A2B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabClases6", "LabClases6.csproj", "{2729BECF-E9BC-457D-BF8B-85A4747E8A2B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Juego", "..\Juego\Juego.csproj", "{4600D4BB-4E1E-4798-B7E9-98E708A3826A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jugada", "..\Jugada\Jugada.csproj", "{B93EB3B5-2F34-4113-B414-AF740A78F2EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JugadaConAyuda", "..\JugadaConAyuda\JugadaConAyuda.csproj", "{28318832-02E3-4323-B8C8-3D4A6D67199B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{B93EB3B5-2F34-4113-B414-AF740A78F2EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B93EB3B5-2F34-4113-B414-AF740A78F2EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B93EB3B5-2F34-4113-B414-AF740A78F2EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28318832-02E3-4323-B8C8-3D4A6D67199B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28318832-02E3-4323-B8C8-3D4A6D67199B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28318832-02E3-4323-B8C8-3D4A6D67199B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28318832-02E3-4323-B8C8-3D4A6D67199B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

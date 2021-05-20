@@ -47,7 +47,6 @@ namespace Academia
             this.label1.TabIndex = 0;
             this.label1.Text = "¡Bienvenido al Sistema!\r\nPor favor digite su información de Ingreso";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -66,7 +65,6 @@ namespace Academia
             this.label3.Size = new System.Drawing.Size(85, 17);
             this.label3.TabIndex = 2;
             this.label3.Text = "Contraseña:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // lnkOlvidaPass
             // 
@@ -77,6 +75,7 @@ namespace Academia
             this.lnkOlvidaPass.TabIndex = 3;
             this.lnkOlvidaPass.TabStop = true;
             this.lnkOlvidaPass.Text = "Olvidé mi contraseña";
+            this.lnkOlvidaPass.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkOlvidaPass_LinkClicked);
             // 
             // txtUsuario
             // 
@@ -89,6 +88,7 @@ namespace Academia
             // 
             this.txtPass.Location = new System.Drawing.Point(171, 160);
             this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(251, 22);
             this.txtPass.TabIndex = 5;
             // 
@@ -100,6 +100,7 @@ namespace Academia
             this.btnIngresar.TabIndex = 6;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = true;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // formLogin
             // 
@@ -115,7 +116,6 @@ namespace Academia
             this.Controls.Add(this.label1);
             this.Name = "formLogin";
             this.Text = "Ingreso";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

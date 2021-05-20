@@ -71,7 +71,7 @@ namespace Academia
             // lnkOlvidaPass
             // 
             this.lnkOlvidaPass.AutoSize = true;
-            this.lnkOlvidaPass.Location = new System.Drawing.Point(12, 328);
+            this.lnkOlvidaPass.Location = new System.Drawing.Point(12, 223);
             this.lnkOlvidaPass.Name = "lnkOlvidaPass";
             this.lnkOlvidaPass.Size = new System.Drawing.Size(141, 17);
             this.lnkOlvidaPass.TabIndex = 3;
@@ -82,19 +82,19 @@ namespace Academia
             // 
             this.txtUsuario.Location = new System.Drawing.Point(171, 112);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(100, 22);
+            this.txtUsuario.Size = new System.Drawing.Size(251, 22);
             this.txtUsuario.TabIndex = 4;
             // 
             // txtPass
             // 
             this.txtPass.Location = new System.Drawing.Point(171, 160);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(100, 22);
+            this.txtPass.Size = new System.Drawing.Size(251, 22);
             this.txtPass.TabIndex = 5;
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(171, 249);
+            this.btnIngresar.Location = new System.Drawing.Point(347, 188);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(75, 23);
             this.btnIngresar.TabIndex = 6;
@@ -105,7 +105,7 @@ namespace Academia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(434, 376);
+            this.ClientSize = new System.Drawing.Size(434, 252);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtUsuario);

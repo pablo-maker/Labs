@@ -29,7 +29,7 @@ namespace Negocio
         public Usuarios()
         {
             this.Conn = new SqlConnection(
-            "Data Source=serverisi;Initial Catalog=academia;Integrated Security=false;user=net;password=net;");
+            "Data Source=localhost\\SQLEXPRESS;Initial Catalog=academia;Integrated Security=true;");
             /*
              * Este connection string es para conectarse con la base de datos academia en el servidor
              * del departamento sistemas desde una PC de los laboratorios de sistemas,

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LabGrilla
 {
-    public partial class Form1 : Form
+    public partial class formListaUsuarios : Form
     {
-        public Form1()
+        public formListaUsuarios()
         {
             InitializeComponent();
         }

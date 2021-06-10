@@ -17,6 +17,16 @@ namespace Lab01
                 Console.Write((char)lector.ReadByte());
             }
             */
+            leer();
+            Console.ReadKey();
+            escribir();
+            Console.ReadKey();
+            leer();
+            Console.ReadKey();
+        }
+
+        private static void leer()
+        {
             StreamReader lector = File.OpenText("agenda.txt");
             string linea;
             Console.WriteLine("Nombre\tApellido\te-mail\t\t\tTelefono");
@@ -26,11 +36,39 @@ namespace Lab01
                 if (linea != null)
                 {
                     string[] valores = linea.Split(';');
-                    Console.WriteLine("{0}\t{1}\t{2}\t{3}",valores[0], valores[1], valores[2], valores[3]);
+                    Console.WriteLine("{0}\t{1}\t{2}\t{3}", valores[0], valores[1], valores[2], valores[3]);
                 }
             } while (linea != null);
             lector.Close();
-            Console.ReadKey();
+        }
+
+        private static void escribir()
+        {
+            StreamWriter escritor = File.AppendText("agenda.txt");
+            Console.WriteLine("Ingrese un nuevo contacto:");
+            string rta = "S";
+            while (rta == "S")
+            {
+                Console.WriteLine("Ingrese Nombre:");
+                string nombre = Console.ReadLine();
+                Console.WriteLine();
+                Console.WriteLine("Ingrese Apellido:");
+                string apellido = Console.ReadLine();
+                Console.WriteLine();
+                Console.WriteLine("Ingrese E-mail:");
+                string email = Console.ReadLine();
+                Console.WriteLine();
+                Console.WriteLine("Ingrese Telefono:");
+                string telefono = Console.ReadLine();
+                Console.WriteLine();
+                Console.WriteLine();
+
+                escritor.WriteLine(nombre + ";" + apellido + ";" + email + ";" + telefono);
+
+                Console.WriteLine("¿Desea agregar otro contacto? (S/N)");
+                rta = Console.ReadLine();
+            }
+            escritor.Close();
         }
     }
 }

@@ -11,11 +11,22 @@ namespace Lab01
     {
         static void Main(string[] args)
         {
-            FileStream lector = new FileStream("agenda.txt", FileMode.Open, FileAccess.Read, FileShare.Read);
+            /*FileStream lector = new FileStream("agenda.txt", FileMode.Open, FileAccess.Read, FileShare.Read);
             while (lector.Length > lector.Position)
             {
                 Console.Write((char)lector.ReadByte());
             }
+            */
+            StreamReader lector = File.OpenText("agenda.txt");
+            string linea;
+            do
+            {
+                linea = lector.ReadLine();
+                if (linea != null)
+                {
+                    Console.WriteLine(linea);
+                }
+            } while (linea != null);
             lector.Close();
             Console.ReadKey();
         }

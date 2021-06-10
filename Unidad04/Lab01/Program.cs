@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-
+using System.Xml;
 namespace Lab01
 {
     class Program
@@ -17,12 +17,24 @@ namespace Lab01
                 Console.Write((char)lector.ReadByte());
             }
             */
-            leer();
+
+            /*leer();
             Console.ReadKey();
             escribir();
             Console.ReadKey();
             leer();
             Console.ReadKey();
+            */
+
+            Console.WriteLine("Presione una tecla para generar el archivo agendaxml.xml con los datos de agenda.txt");
+            Console.ReadKey();
+            EscribirXML();
+            Console.WriteLine("Archivo agendaxml.xml generado correctamente \n\nPresione una tecla para ver su contenido");
+            Console.ReadKey();
+            Console.WriteLine();
+            LeerXML();
+            Console.ReadKey();
+
         }
 
         private static void leer()
@@ -70,5 +82,62 @@ namespace Lab01
             }
             escritor.Close();
         }
+        private static void EscribirXML()
+        {
+            XmlTextWriter escritorXML = new XmlTextWriter("agendaxml.xml", null);
+            escritorXML.Formatting = Formatting.Indented; //para hacer mas facil la lectura del archivo
+            escritorXML.WriteStartDocument(true);
+            escritorXML.WriteStartElement("DocumentElement");//compatibilidad para proximos labs
+            StreamReader lector = File.OpenText("agenda.txt");
+            string linea;
+            do
+            {
+                linea = lector.ReadLine();
+                if (linea != null)
+                {
+                    string[] valores = linea.Split(';');
+                    escritorXML.WriteStartElement("contactos");
+                    escritorXML.WriteStartElement("nombre");
+                    escritorXML.WriteValue(valores[0]);
+                    escritorXML.WriteEndElement(); //cierra el tag nombre
+                    escritorXML.WriteStartElement("apellido");
+                    escritorXML.WriteValue(valores[1]);
+                    escritorXML.WriteEndElement(); //cierra el tag apellido
+                    escritorXML.WriteStartElement("email");
+                    escritorXML.WriteValue(valores[2]);
+                    escritorXML.WriteEndElement(); //cierra el tag email
+                    escritorXML.WriteStartElement("telefono");
+                    escritorXML.WriteValue(valores[3]);
+                    escritorXML.WriteEndElement(); //cierra el tag telefono
+                    escritorXML.WriteEndElement(); //cierra el tag contactos
+                }
+            } while (linea != null);
+            escritorXML.WriteEndElement(); //cierra el tag DocumentElement
+            escritorXML.WriteEndDocument();
+
+            escritorXML.Close();
+
+            lector.Close();
+
+
+        }
+        private static void LeerXML()
+        {
+            XmlTextReader lectorXML = new XmlTextReader("agenda.txt");
+            string tagAnterior = "";
+            while (lectorXML.Read())
+            {
+                if (lectorXML.NodeType == XmlNodeType.Element)
+                {
+                    tagAnterior = lectorXML.Name;
+                }
+                else if (lectorXML.NodeType == XmlNodeType.Text)
+                {
+                    Console.WriteLine(tagAnterior + ": " + lectorXML.Value);
+                }
+            }
+            lectorXML.Close();
+        }
+        
     }
 }

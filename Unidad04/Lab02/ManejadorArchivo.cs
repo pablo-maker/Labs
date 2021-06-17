@@ -15,7 +15,7 @@ namespace Lab02
         {
             this.misContactos = this.getTabla();
         }
-
+        //Clases virtuales para poder permitir ser sobrescritos en las clases hijas
         public virtual DataTable getTabla()
         {
             return new DataTable();

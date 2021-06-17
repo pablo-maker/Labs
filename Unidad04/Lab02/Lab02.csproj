@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ManejadorArchivoTxt.cs" />
+    <Compile Include="ManejadorArchivoXML.cs" />
     <Compile Include="ManejadorArchivo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -22,7 +22,7 @@ namespace Ejercicio4
             //Indicamos el Connection String
             myconn.ConnectionString =
                 "Data Source=localhost\\SQLExpress;Initial Catalog=myDataBase";
-
+            /*
             SqlCommand mycommand = new SqlCommand();
 
             mycommand.CommandText = "SELECT CustomerID, CompanyName FROM Customers";
@@ -38,6 +38,15 @@ namespace Ejercicio4
             dtEmpresas.Load(mydr);
 
             myconn.Close();
+            */
+            SqlDataAdapter myAdap =
+                new SqlDataAdapter("SELECT CustomerID, CompanyName FROM Customers", myconn);
+
+            myconn.Open();
+            //Cargo el contenido del result set obtenido de la base de datos en el objeto datatable
+            myAdap.Fill(dtEmpresas);
+            myconn.Close();
+
 
             //Mostramos los datos
             Console.WriteLine("Listado de Empresas: ");

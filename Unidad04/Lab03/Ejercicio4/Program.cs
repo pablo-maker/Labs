@@ -15,6 +15,40 @@ namespace Ejercicio4
             DataTable dtEmpresas = new DataTable("Empresas");
 
             dtEmpresas.Columns.Add("CustomerID", typeof(string));
+            dtEmpresas.Columns.Add("CompanyName", typeof(string));
+
+            //Objeto SQLConnection
+            SqlConnection myconn = new SqlConnection();
+            //Indicamos el Connection String
+            myconn.ConnectionString =
+                "Data Source=localhost\\SQLExpress;Initial Catalog=myDataBase";
+
+            SqlCommand mycommand = new SqlCommand();
+
+            mycommand.CommandText = "SELECT CustomerID, CompanyName FROM Customers";
+            mycommand.Connection = myconn;
+
+            //Creamos un adaptador
+            SqlDataAdapter myadap =
+                new SqlDataAdapter("SELECT CustomerID, CompanyName, CompanyName FROM Customers", myconn);
+
+            myconn.Open();
+
+            SqlDataReader mydr = mycommand.ExecuteReader();
+            dtEmpresas.Load(mydr);
+
+            myconn.Close();
+
+            //Mostramos los datos
+            Console.WriteLine("Listado de Empresas: ");
+            foreach (DataRow rowEmpresas in dtEmpresas.Rows)
+            {
+                string idEmpresa = rowEmpresas["CustomerID"].ToString();
+                string nombreEmpresa = rowEmpresas["CompanyName"].ToString();
+                Console.WriteLine(idEmpresa + " - " + nombreEmpresa);
+
+            }
+            Console.ReadKey();
         }
     }
 }

@@ -6,6 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "LabGrillaASP", ".", "{CD556623-04B1-4D42-939C-B207754108E2}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		ProjectReferences = "{ff717362-8805-4805-a96c-9e11bfd377ea}|Negocio.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/localhost_52202"
 		Debug.AspNetCompiler.PhysicalPath = "..\LabGrillaASP\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_52202\"
@@ -21,16 +22,26 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "LabGrillaASP", ".", "{CD556
 		Release.AspNetCompiler.FixedNames = "false"
 		Release.AspNetCompiler.Debug = "False"
 		VWDPort = "52202"
+		SlnRelativePath = "..\LabGrillaASP\"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negocio", "Negocio\Negocio.csproj", "{FF717362-8805-4805-A96C-9E11BFD377EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{CD556623-04B1-4D42-939C-B207754108E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CD556623-04B1-4D42-939C-B207754108E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD556623-04B1-4D42-939C-B207754108E2}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD556623-04B1-4D42-939C-B207754108E2}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{FF717362-8805-4805-A96C-9E11BFD377EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF717362-8805-4805-A96C-9E11BFD377EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF717362-8805-4805-A96C-9E11BFD377EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF717362-8805-4805-A96C-9E11BFD377EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

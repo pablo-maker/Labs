@@ -11,6 +11,7 @@
         <div>
             <asp:GridView ID="grdUsuarios" runat="server">
             </asp:GridView>
+            <asp:ObjectDataSource ID="odsUsuarios" runat="server" DataObjectTypeName="Negocio.Usuario" DeleteMethod="BorrarUsuario" InsertMethod="AgregarUsuario" SelectMethod="GetAll" TypeName="Negocio.ManagerUsuarios" UpdateMethod="ActualizarUsuario"></asp:ObjectDataSource>
             <table style="width:100%;">
         <tr>
                 <td align="center" colspan="2">

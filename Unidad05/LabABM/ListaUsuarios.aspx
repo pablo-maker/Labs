@@ -5,13 +5,42 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <style type="text/css">
+        .auto-style1 {
+            width: 150px;
+            height: 34px;
+        }
+        .auto-style2 {
+            height: 34px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:GridView ID="grdUsuarios" runat="server">
+            <asp:GridView ID="grdUsuarios" runat="server" AutoGenerateColumns="False" DataSourceID="odsUsuarios">
+                <Columns>
+                    <asp:CommandField ShowDeleteButton="True" />
+                    <asp:BoundField DataField="Id" HeaderText="Id" SortExpression="Id" />
+                    <asp:BoundField DataField="TipoDoc" HeaderText="TipoDoc" SortExpression="TipoDoc" />
+                    <asp:BoundField DataField="NroDoc" HeaderText="NroDoc" SortExpression="NroDoc" />
+                    <asp:BoundField DataField="FechaNac" HeaderText="FechaNac" SortExpression="FechaNac" />
+                    <asp:BoundField DataField="Apellido" HeaderText="Apellido" SortExpression="Apellido" />
+                    <asp:BoundField DataField="Nombre" HeaderText="Nombre" SortExpression="Nombre" />
+                    <asp:BoundField DataField="Direccion" HeaderText="Direccion" SortExpression="Direccion" />
+                    <asp:BoundField DataField="Telefono" HeaderText="Telefono" SortExpression="Telefono" />
+                    <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Email" />
+                    <asp:BoundField DataField="Celular" HeaderText="Celular" SortExpression="Celular" />
+                    <asp:BoundField DataField="NombreUsuario" HeaderText="NombreUsuario" SortExpression="NombreUsuario" />
+                    <asp:BoundField DataField="Clave" HeaderText="Clave" SortExpression="Clave" />
+                    <asp:HyperLinkField DataNavigateUrlFields="Id" DataNavigateUrlFormatString="ListaUsuarios.aspx?id={0}" Text="Editar" />
+                </Columns>
             </asp:GridView>
-            <asp:ObjectDataSource ID="odsUsuarios" runat="server" DataObjectTypeName="Negocio.Usuario" DeleteMethod="BorrarUsuario" InsertMethod="AgregarUsuario" SelectMethod="GetAll" TypeName="Negocio.ManagerUsuarios" UpdateMethod="ActualizarUsuario"></asp:ObjectDataSource>
+            <asp:ObjectDataSource ID="odsUsuarios" runat="server" DataObjectTypeName="Negocio.Usuario" DeleteMethod="BorrarUsuario" InsertMethod="AgregarUsuario" SelectMethod="GetAll" TypeName="Negocio.ManagerUsuarios" UpdateMethod="ActualizarUsuario">
+                <DeleteParameters>
+                    <asp:Parameter Name="Id" Type="Int32" />
+                </DeleteParameters>
+            </asp:ObjectDataSource>
             <table style="width:100%;">
         <tr>
                 <td align="center" colspan="2">
@@ -24,10 +53,10 @@
                     <asp:TextBox ID="txtApellido" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
-                <td style="width: 150px" align="right">
+                <td align="right" class="auto-style1">
                     Nombre:</td>
                 
-                <td>
+                <td class="auto-style2">
                     &nbsp;<asp:TextBox ID="txtNombre" runat="server"></asp:TextBox></td>
             </tr>
             <tr>
@@ -114,9 +143,9 @@
             </tr>
             <tr>
                 <td style="width: 150px" align="center">
-                    <asp:Button ID="btnGuardar" runat="server" Text="Guardar" /></td>
+                    <asp:Button ID="btnGuardar" runat="server" Text="Guardar" OnClick="btnGuardar_Click" /></td>
                 <td align="center">
-                    <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" /></td>
+                    <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" OnClick="btnCancelar_Click" /></td>
             </tr>
 
     </table>

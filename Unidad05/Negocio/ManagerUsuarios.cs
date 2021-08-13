@@ -160,6 +160,53 @@ namespace Negocio
             //Cierro la Conexión
             this.Conn.Open();
         }
+        public Usuario GetUsuario(int idUsuario)
+        {
+            //Basarse en el método GetAll pero obtener únicamente el usuario que viene
+            //como párametro
+            Usuario usuarioActual = new Usuario();
+            try
+            {
+                this.Conn.Open();
+
+                //Objeto SqlCommand para la sentencia SQL que se va a ejecutar
+                SqlCommand cmdUsuarios = new SqlCommand("SELECT * FROM usuarios WHERE id=@idUsuario", Conn);
+                cmdUsuarios.Parameters.Add("@idUsuario", SqlDbType.Int).Value = idUsuario;
+
+                //DataReader para recuperar los datos de la DB
+                SqlDataReader rdrUsuarios = cmdUsuarios.ExecuteReader();
+
+                //Read() lee una fila de las devueltas por el commandSql, devuelve true mientras pueda leer datos
+                if (rdrUsuarios.Read())
+                {
+                    usuarioActual.Id = (int)rdrUsuarios["id"];
+                    usuarioActual.TipoDoc = (Nullable<int>)rdrUsuarios["tipo_doc"];
+                    usuarioActual.NroDoc = (Nullable<int>)rdrUsuarios["nro_doc"];
+                    usuarioActual.FechaNac = rdrUsuarios["fecha_nac"].ToString();
+                    usuarioActual.Apellido = rdrUsuarios["apellido"].ToString();
+                    usuarioActual.Nombre = rdrUsuarios["nombre"].ToString();
+                    usuarioActual.Direccion = rdrUsuarios["direccion"].ToString();
+                    usuarioActual.Telefono = rdrUsuarios["telefono"].ToString();
+                    usuarioActual.Email = rdrUsuarios["email"].ToString();
+                    usuarioActual.Celular = rdrUsuarios["celular"].ToString();
+                    usuarioActual.NombreUsuario = rdrUsuarios["usuario"].ToString();
+                    usuarioActual.Clave = rdrUsuarios["clave"].ToString();
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Exception ExcepcionManejada = new Exception("Error al recuperar datos del usuario", ex);
+                throw ExcepcionManejada;
+            }
+            finally
+            {
+                this.Conn.Close();
+            }
+            return usuarioActual;
+        }
+        
 
 
     }
